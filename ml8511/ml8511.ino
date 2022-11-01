@@ -1,12 +1,5 @@
-/*
-  Made on Mar 15, 2021
-  By MehranMaleki @ Electropeak
-  Home
-*/
-
-//pin definitions
-int UV_OUT = A0;    //Sensor Output
-int REF_3V3 = A1;   //3.3V power on the Arduino board
+int UV_OUT = A0;    
+int REF_3V3 = A1;   
 
 void setup()
 {

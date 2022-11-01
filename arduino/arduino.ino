@@ -11,5 +11,6 @@ void setup() {
 }
 
 void loop() {
-  mySerial.println("Hello, world?");
+  String json =  "{\"temperature\" : " + String(26181) + ", \"humidity\" : " + String(98121) + "}";
+  mySerial.println(json);
 }

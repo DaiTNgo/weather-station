@@ -17,11 +17,11 @@ void UART();
 
 void setup()
 {
-  Serial.begin(115200);
+  Serial.begin(9600);
   Wire.begin();
 
   //  Serial2.begin(baud-rate, protocol, RX pin, TX pin);
-  Serial2.begin(9600, SERIAL_8N1, RX, TX);
+  Serial2.begin(115200, SERIAL_8N1, RX, TX);
   Serial.println("Serial Txd is on pin: " + String(TX));
   Serial.println("Serial Rxd is on pin: " + String(RX));
 
