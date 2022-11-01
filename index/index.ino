@@ -6,7 +6,7 @@ float mmTotal = 0;
 
 int preStatus = 0;
 
-unsigned long millis = 0;
+unsigned long tempMillis = 0;
 
 unsigned long startTime = 0;
 
@@ -24,32 +24,32 @@ void loop() {
 
   if (sensor != preStatus) {
     startTime = millis(); // send message to esp32, starting to rain.
-    
+tempMillis= millise();
     mmTotal = mmTotal + mmPerPulse;
-    
-    if(mmTotal - mmPerPulse == 0){
-        // send message to esp32, starting to rain
-    }else{
-        // send current mmTotal 
+
+    if (mmTotal - mmPerPulse == 0) {
+      // send message to esp32, starting to rain
+    } else {
+      // send current mmTotal
     }
-    
-    
+
+
     preStatus = sensor;
 
-    
+
   }
 
   delay(500);
 
-    if(millis() > millis + TIMER && startTime != 0){
+  if (millis() > tempMillis + TIMER && startTime != 0) {
     // if after 10m mmTotal don't change, send message to esp32, rain end
-        displayTime(millis);
-    
-        startTime = 0;
+    displayTime(tempMillis);
 
-        mmTotal = 0;
-    }   
-  
+    startTime = 0;
+
+    mmTotal = 0;
+  }
+
 }
 
 void displayTime(unsigned long time_millis)
